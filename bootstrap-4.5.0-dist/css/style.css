@@ -1,0 +1,53 @@
+.jumbotron-extend {
+    position: relative;
+    height: 100vh;
+    min-height: 300px;
+    background: url(image/image3.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+.jumbotron-container {
+    position: relative;
+    top: 20%;
+    transform: translateY(-50%);
+}
+
+.site-name {
+    font-family: 'Playfair Display', serif;
+    color: azure;
+}
+
+.form-horizontal {
+    position: relative;
+    top: 60%;
+    transform: translateY(-50%);
+    color: azure;
+}
+
+.checkbox {
+    color: black;
+}
+
+.col-sm-offset-2 p {
+    text-align: center;
+}
+
+.btn-black {
+    border-radius: 0;
+    background-color: #000;
+    color: #fff;
+    font-family: 'Avenir', serif;
+}
+
+.btn-black:hover {
+     background-color: #fff;
+     color: #000;
+}
+
+.register {
+    text-align: center;
+}
+
+.login {
+    text-align: center;
+}
