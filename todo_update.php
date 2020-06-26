@@ -10,19 +10,27 @@ include("functions.php");
 check_session_id();
 
 // 送信データ受け取り
-$todo = $_POST["todo"];
-$deadline = $_POST["deadline"];
+$user_name = $_POST["user_name"];
+$hobby = $_POST["hobby"];
+$dream = $_POST["dream"];
+$strong = $_POST["strong"];
+$weak = $_POST["weak"];
+$favorite = $_POST["favorite"];
 $id = $_POST["id"];
 
 // DB接続
 $pdo = connect_to_db();
 
 // UPDATE文を作成&実行
-$sql = "UPDATE todo_table SET todo=:todo, deadline=:deadline, updated_at=sysdate() WHERE id=:id";
+$sql = "UPDATE ideasheet2 SET user_name=:user_name, hobby=:hobby, dream=:dream, strong=:strong, weak=:weak, favorite=:favorite, updated_at=sysdate() WHERE id=:id";
 
 $stmt = $pdo->prepare($sql);
-$stmt->bindValue(':todo', $todo, PDO::PARAM_STR);
-$stmt->bindValue(':deadline', $deadline, PDO::PARAM_STR);
+$stmt->bindValue(':user_name', $user_name, PDO::PARAM_STR);
+$stmt->bindValue(':hobby', $hobby, PDO::PARAM_STR);
+$stmt->bindValue(':dream', $dream, PDO::PARAM_STR);
+$stmt->bindValue(':strong', $strong, PDO::PARAM_STR);
+$stmt->bindValue(':weak', $weak, PDO::PARAM_STR);
+$stmt->bindValue(':favorite', $favorite, PDO::PARAM_STR);
 $stmt->bindValue(':id', $id, PDO::PARAM_INT);
 $status = $stmt->execute();
 
